@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "build",
+    "site": "runtime-records-6345295b6b5d2",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

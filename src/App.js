@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import useDatabase from './hooks/useDatabase'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+
+  const [data, isLoaded] = useDatabase("vaccinaties")
+
+  const renderList = () => {
+    return(
+      <pre>
+        { JSON.stringify(data) }
+      </pre>
+    )
+  }
+
+  return(
+    <div>
+      <h1>Info</h1>
+      { isLoaded && renderList() }
     </div>
-  );
-}
+  )
 
+
+}
 export default App;
